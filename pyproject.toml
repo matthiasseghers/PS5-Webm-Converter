@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ps5-convert"
+version = "1.0.0"
+description = "Convert PS5 4K .webm recordings to Final Cut Pro-ready .mp4"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.1",
+]
+
+[project.scripts]
+ps5-convert = "ps5_convert:main"
+
+[tool.setuptools]
+py-modules = ["ps5_convert"]
