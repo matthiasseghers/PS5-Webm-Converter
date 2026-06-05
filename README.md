@@ -27,6 +27,89 @@ This tool does the conversion properly:
 
 The output is a standard H.264 or HEVC `.mp4` that imports cleanly into Final Cut Pro, DaVinci Resolve, Premiere, and anything else that speaks MP4.
 
+## Visual comparison
+
+The following examples from Burnout Paradise Remastered gameplay (PS5, 4K HDR) show the difference between naive conversion (which lifts blacks and washes out colors) and ps5-convert's proper color handling.
+
+> **Note:** While these examples use Burnout Paradise footage, the tool works with any PS5 WebM recording regardless of game or HDR/SDR mode. Contributions of comparison screenshots from other games are welcome!
+
+### Example 1: Dark shadows and reflections
+
+<table>
+<tr>
+  <td align="center"><b>Original WebM</b></td>
+  <td align="center"><b>Naive conversion (lifted blacks)</b></td>
+  <td align="center"><b>ps5-convert (correct)</b></td>
+</tr>
+<tr>
+  <td><img src="examples/screenshots/burnout1-source.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout1-bad.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout1-fixed.png" width="100%"></td>
+</tr>
+</table>
+
+### Example 2: Midday city driving
+
+<table>
+<tr>
+  <td align="center"><b>Original WebM</b></td>
+  <td align="center"><b>Naive conversion (lifted blacks)</b></td>
+  <td align="center"><b>ps5-convert (correct)</b></td>
+</tr>
+<tr>
+  <td><img src="examples/screenshots/burnout2-source.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout2-bad.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout2-fixed.png" width="100%"></td>
+</tr>
+</table>
+
+### Example 3: Building shadows with bright road ahead
+
+<table>
+<tr>
+  <td align="center"><b>Original WebM</b></td>
+  <td align="center"><b>Naive conversion (lifted blacks)</b></td>
+  <td align="center"><b>ps5-convert (correct)</b></td>
+</tr>
+<tr>
+  <td><img src="examples/screenshots/burnout3-source.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout3-bad.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout3-fixed.png" width="100%"></td>
+</tr>
+</table>
+
+### Example 4: Heavy clouds and overcast weather
+
+<table>
+<tr>
+  <td align="center"><b>Original WebM</b></td>
+  <td align="center"><b>Naive conversion (lifted blacks)</b></td>
+  <td align="center"><b>ps5-convert (correct)</b></td>
+</tr>
+<tr>
+  <td><img src="examples/screenshots/burnout4-source.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout4-bad.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout4-fixed.png" width="100%"></td>
+</tr>
+</table>
+
+### Example 5: Hillside road with natural lighting
+
+<table>
+<tr>
+  <td align="center"><b>Original WebM</b></td>
+  <td align="center"><b>Naive conversion (lifted blacks)</b></td>
+  <td align="center"><b>ps5-convert (correct)</b></td>
+</tr>
+<tr>
+  <td><img src="examples/screenshots/burnout5-source.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout5-bad.png" width="100%"></td>
+  <td><img src="examples/screenshots/burnout5-fixed.png" width="100%"></td>
+</tr>
+</table>
+
+**Note the difference:** In the naive conversion, blacks appear gray/washed out, reducing contrast and color depth. ps5-convert preserves the original's true blacks and color accuracy by explicitly maintaining the TV color range (16-235) throughout the conversion process.
+
 ## Requirements
 
 - Python 3.11+
